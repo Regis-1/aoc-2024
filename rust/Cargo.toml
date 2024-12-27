@@ -1,5 +1,5 @@
 [package]
-name = "aoc-2024"
+name = "aoc-2024-rust"
 version = "0.1.0"
 edition = "2021"
 
@@ -10,5 +10,5 @@ name = "day1"
 path = "src/day1/main.rs"
 
 [[bin]]
-name = "day2"
+name = "day3"
 path = "src/day2/main.rs"
