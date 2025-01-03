@@ -1,6 +1,6 @@
 mod solution;
 use std::{env, io, fs};
-use solution::part1;
+use solution::{part1, part2};
 
 fn check_argument_validity(arg_num: usize, usage_info: &str) -> Result<Vec<String>, io::Error> {
     let args: Vec<String> = env::args().collect();
@@ -22,8 +22,12 @@ fn main() -> Result<(), io::Error> {
     let file_content = fs::read_to_string(file_path)?;
 
     // part 1
-    let p1_result = part1::calculate_result(file_content);
+    let p1_result = part1::calculate_result(&file_content);
     println!("[Part 1] Total result: {p1_result}");
+
+    // part 2
+    let p2_result = part2::calculate_result(&file_content);
+    println!("[Part 2] Total result: {p2_result}");
 
     Ok(())
 }
