@@ -16,4 +16,8 @@ func main() {
     // part one
     var resultOne = day4.SolvePartOne(input)
     fmt.Printf("[Part 1] Number of found XMAS words: %d\n", resultOne)
+
+    // part two
+    var resultTwo = day4.SolvePartTwo(input)
+    fmt.Printf("[Part 2] Number of found X-MAS: %d\n", resultTwo)
 }

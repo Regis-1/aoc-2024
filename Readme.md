@@ -13,3 +13,4 @@ Feel free to check them out and send me tips if you have any. Let's grow togethe
 - **Day 1** - Rust
 - **Day 2** - Go
 - **Day 3** - Rust
+- **Day 4** - Go

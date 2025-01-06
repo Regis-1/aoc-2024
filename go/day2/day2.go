@@ -1,10 +1,12 @@
 package day2
 
 import (
-	"aoc-2024-go/utils"
 	"bufio"
 	"math"
 	"os"
+    "fmt"
+    "strings"
+    "strconv"
 )
 
 type LevelRelation = int
@@ -106,6 +108,23 @@ func excludeIdxFromSlice(slice []int, idx int) []int {
     return outputSlice
 }
 
+func StringToIntSliceBySep(line string, sep string) []int {
+    var slice []int
+
+    tokens := strings.Split(line, sep)
+    for _, token := range tokens {
+        num, err := strconv.Atoi(token)
+        if err != nil {
+            _ = fmt.Errorf("ERROR: Invalid line in data file. Couldn't convert token to a integer!")
+            return nil
+        }
+
+        slice = append(slice, num)
+    }
+
+    return slice
+}
+
 func extractReportsFromInput(input string) [][]int {
     file, err := os.Open(input)
     var reports [][]int
@@ -117,7 +136,7 @@ func extractReportsFromInput(input string) [][]int {
 
     scanner := bufio.NewScanner(file)
     for scanner.Scan() {
-        reports = append(reports, utils.StringToIntSliceBySep(scanner.Text(), " "))
+        reports = append(reports, StringToIntSliceBySep(scanner.Text(), " "))
     }
 
     return reports
